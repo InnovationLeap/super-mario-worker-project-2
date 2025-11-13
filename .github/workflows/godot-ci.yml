@@ -25,10 +25,10 @@ jobs:
           mkdir -v -p ~/.config/
           mv /root/.config/godot ~/.config/godot
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
-      - name: Project Import
+      - name: Build Godot .NET lib
         run: |
           cd $PROJECT_PATH
-          godot --headless --verbose --import
+          dotnet build
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
