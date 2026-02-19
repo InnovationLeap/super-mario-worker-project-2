@@ -70,7 +70,7 @@ jobs:
           mkdir -v -p "build/${{ matrix.name }}"
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          if [ ${{ matrix.name }} == "Windows" ]; then
+          if [ "${{ matrix.name }}" = "Windows" ]; then
             echo 'start "" ".\${{ env.EXPORT_NAME }}.exe" --rendering-driver opengl3' > "$EXPORT_DIR/${{ matrix.name }}/Compatible_Launch.bat"
           fi
           godot --headless --verbose --export-release "${{ matrix.export_template }}" "${EXPORT_DIR}/${{ matrix.name }}/${EXPORT_NAME}.${{ matrix.ext }}"
