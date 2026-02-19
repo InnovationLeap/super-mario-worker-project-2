@@ -18,7 +18,7 @@ jobs:
       matrix:
         include:
         - name: Linux
-          export_template: "Linux/X11"
+          export_template: "Linux"
           ext: "x86_64"
         - name: Windows
           export_template: "Windows Desktop"
