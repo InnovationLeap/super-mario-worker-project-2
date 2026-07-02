@@ -137,6 +137,13 @@ public partial class EditManager : Node {
 
     public bool CanPlaceObject(bool erase = false) {
         Vector2 cursorWorldPos = CursorPositionProvider.GetCursorPosition(this);
+        
+        // 检查鼠标是否在视口内
+        var viewport = GetViewport();
+        var mousePos = viewport.GetMousePosition();
+        var viewportRect = viewport.GetVisibleRect();
+        if (!viewportRect.HasPoint(mousePos)) return false;
+        
         var space = GetParent<Node2D>().GetWorld2D().DirectSpaceState;
         var query = new PhysicsPointQueryParameters2D();
         query.Position = cursorWorldPos;
