@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dd6j0tdrxhhio" path="res://content/level/facility/solid/solid.png" id="2_6wj3y"]
 [ext_resource type="PackedScene" uid="uid://22smr6kls4nc" path="res://content/level/facility/legde/obstacle_half.tscn" id="3_oq6c0"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq6c0"]
+size = Vector2(32, 16)
+
 [node name="EditSolid" type="Node2D" unique_id=699575037]
 
 [node name="EditObjectBase" parent="." unique_id=428951645 instance=ExtResource("1_oq6c0")]
@@ -23,5 +26,9 @@ SpawnScene = ExtResource("3_oq6c0")
 MetaDict = Dictionary[String, String]({
 "t": "0"
 })
+
+[node name="CollisionShape2D" parent="EditObjectBase/Area2D" parent_id_path=PackedInt32Array(428951645, 1744609504) index="0" unique_id=1145159192]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_oq6c0")
 
 [editable path="EditObjectBase"]

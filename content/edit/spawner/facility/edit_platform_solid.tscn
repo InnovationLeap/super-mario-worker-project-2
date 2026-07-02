@@ -24,4 +24,7 @@ MetaDict = Dictionary[String, String]({
 "t": "1"
 })
 
+[node name="CollisionShape2D" parent="EditObjectBase/Area2D" parent_id_path=PackedInt32Array(428951645, 1744609504) index="0" unique_id=1145159192]
+position = Vector2(16, 16)
+
 [editable path="EditObjectBase"]
