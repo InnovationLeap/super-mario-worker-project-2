@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dxxxnvh0r5nfq"]
 
+[ext_resource type="Script" uid="uid://b52ibeswuotk6" path="res://script/edit/SubSpriteGetter.cs" id="1_5wlny"]
 [ext_resource type="Script" uid="uid://6qtxm78dyjcg" path="res://script/edit/SpawnerObject.cs" id="1_t0bus"]
 [ext_resource type="PackedScene" uid="uid://oxcq1n1rw6yj" path="res://content/level/bad_object.tscn" id="2_lxuya"]
 [ext_resource type="Shape2D" uid="uid://ck4piypkuht4j" path="res://content/edit/spawner/basic_spawner_rectangle_shape_2d.tres" id="3_mf5j6"]
@@ -13,6 +14,10 @@ gizmo_extents = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=128442666]
 metadata/_edit_lock_ = true
+
+[node name="SubSpriteGetter" type="Node" parent="Sprite2D" unique_id=46438433 node_paths=PackedStringArray("ParentSprite")]
+script = ExtResource("1_5wlny")
+ParentSprite = NodePath("..")
 
 [node name="SpawnerObject" type="Node" parent="." unique_id=1216185063]
 unique_name_in_owner = true

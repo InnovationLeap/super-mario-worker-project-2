@@ -23,7 +23,11 @@ public partial class EditManager : Node {
                 GD.PushError("SpawnerObjectScene is null!");
                 return;
             }
-            _cachedEditInstance = _currentSpawnerObjectScene.Instantiate();
+            if (_cachedEditInstance != null) _cachedEditInstance.Free();
+            _cachedEditInstance = _currentSpawnerObjectScene.Instantiate<Node2D>();
+            _cachedEditInstance.Position = new Vector2(-999, -999);
+            _cachedEditInstance.ResetPhysicsInterpolation();
+            AddChild(_cachedEditInstance);
             var sprite2DNode = _cachedEditInstance.GetNode<Sprite2D>("EditObjectBase/Sprite2D");
             _cachedTexture = sprite2DNode.Texture;
             _cachedFlipV = sprite2DNode.FlipV;
@@ -40,7 +44,7 @@ public partial class EditManager : Node {
     }
 
     private PackedScene? _currentSpawnerObjectScene;
-    private Node? _cachedEditInstance;
+    private Node2D? _cachedEditInstance;
     private Texture2D? _cachedTexture;
     private Vector2 _cachedOffset;
     private SpawnerObject.SpawnerEditType _cachedEditType = SpawnerObject.SpawnerEditType.Buddy;
