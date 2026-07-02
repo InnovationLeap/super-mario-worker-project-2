@@ -31,18 +31,22 @@
 [ext_resource type="PackedScene" uid="uid://c4esatxbckw4h" path="res://content/edit/spawner/enemy/troopa/troopa_fly/edit_troopa_fly_red.tscn" id="19_ivjbd"]
 [ext_resource type="Texture2D" uid="uid://cf2kwk5tqyywc" path="res://content/level/enemy/troopa/troopa_fly/troopa_fly_red.png" id="20_hp03k"]
 [ext_resource type="PackedScene" uid="uid://ku27p0krnk62" path="res://content/edit/edit_object_category_label.tscn" id="23_j5ylf"]
+[ext_resource type="Texture2D" uid="uid://c5hcbuioe0gi6" path="res://content/level/tile/blocks.png" id="24_eybko"]
 [ext_resource type="PackedScene" uid="uid://bvlurdd2mh17n" path="res://content/edit/spawner/enemy/piranha_plant/edit_piranha_plant_green_flip_v.tscn" id="45_xclfj"]
 [ext_resource type="PackedScene" uid="uid://by6fp4lbn7isc" path="res://content/edit/spawner/enemy/bullet_bill/edit_bullet_bill_cannon_flip_v.tscn" id="72_00t1q"]
 [ext_resource type="PackedScene" uid="uid://c8nbya7ggbl3e" path="res://content/edit/spawner/enemy/bullet_bill/edit_missile_bill_cannon_flip_v.tscn" id="75_xclfj"]
 [ext_resource type="PackedScene" uid="uid://cdra4m4xwaovv" path="res://content/edit/spawner/block/question_block/edit_question_block_beetroot.tscn" id="197_vg0yh"]
 [ext_resource type="Script" uid="uid://dtlelidg68oxe" path="res://script/edit/LevelSave.cs" id="226_g0sry"]
 [ext_resource type="Script" uid="uid://b2pggkge3nsdd" path="res://script/edit/LevelLoad.cs" id="227_hjcft"]
+[ext_resource type="PackedScene" uid="uid://b40qllinddxl8" path="res://content/edit/spawner/block/question_block/edit_question_block_hidden.tscn" id="227_xoyyh"]
 [ext_resource type="Script" uid="uid://dj6as2yv7d26l" path="res://script/edit/LevelSettings.cs" id="228_8gvwf"]
 [ext_resource type="Script" uid="uid://cayiadpkhvsar" path="res://script/LoadCurrentDirSave.cs" id="229_hjcft"]
 [ext_resource type="Script" uid="uid://dt25k2tg16rtx" path="res://script/edit/EditPopupManager.cs" id="229_iw1gq"]
 [ext_resource type="Script" uid="uid://bsw4540u8imik" path="res://script/edit/ControlVisibility.cs" id="230_jfae4"]
 [ext_resource type="PackedScene" uid="uid://bxvt6eyfyn5b3" path="res://content/ui/popup/popup_component/smwp_popup_label.tscn" id="231_0o80o"]
 [ext_resource type="PackedScene" uid="uid://0qk4cef678ct" path="res://content/ui/popup/popup_component/smwp_popup_line_edit.tscn" id="232_j5ylf"]
+[ext_resource type="Theme" uid="uid://ds3uq7lyxof1e" path="res://content/level/hud/mw/font_theme/mw_hud.tres" id="232_u5y02"]
+[ext_resource type="PackedScene" uid="uid://cw7ibc1fhyh41" path="res://content/edit/spawner/block/coin_brick/edit_coin_brick_hidden.tscn" id="232_vpa0e"]
 [ext_resource type="PackedScene" uid="uid://caf7un75kne3a" path="res://content/ui/popup/popup_component/smwp_popup_button.tscn" id="233_u5y02"]
 [ext_resource type="Texture2D" uid="uid://v4t3jxyn785" path="res://content/level/block/brick/brick.png" id="new_ext_100"]
 [ext_resource type="Texture2D" uid="uid://clns3f200bbhn" path="res://content/level/block/coin_brick/edit_coin_brick.png" id="new_ext_101"]
@@ -381,12 +385,12 @@ region = Rect2(0, 0, 33, 38)
 atlas = ExtResource("new_ext_134")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_new_22"]
-atlas = ExtResource("new_ext_121")
-region = Rect2(37, 1, 37, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_new_23"]
 atlas = ExtResource("new_ext_122")
+region = Rect2(37, 1, 37, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_new_22"]
+atlas = ExtResource("new_ext_121")
 region = Rect2(37, 1, 37, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_new_15"]
@@ -886,9 +890,18 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="EditObjectCategoryLabel" parent="EditCanvasLayer/Control/PanelDragBlocks/UiMarginContainer" unique_id=511686149 instance=ExtResource("23_j5ylf")]
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvasLayer/Control/PanelDragBlocks/UiMarginContainer" unique_id=1618264954]
+layout_mode = 2
+
+[node name="EditObjectCategoryLabel" parent="EditCanvasLayer/Control/PanelDragBlocks/UiMarginContainer/VBoxContainer" unique_id=511686149 instance=ExtResource("23_j5ylf")]
 layout_mode = 2
 text = "Blocks"
+
+[node name="TextureRect" type="TextureRect" parent="EditCanvasLayer/Control/PanelDragBlocks/UiMarginContainer/VBoxContainer" unique_id=894855728]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("24_eybko")
+stretch_mode = 3
 
 [node name="PanelDragBuddies" type="Panel" parent="EditCanvasLayer/Control" unique_id=2124857542]
 visible = false
@@ -931,6 +944,12 @@ layout_mode = 2
 [node name="EditGoomba" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer" unique_id=331817807 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
+[node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer/EditGoomba/Button" parent_id_path=PackedInt32Array(331817807, 603000286) index="0" unique_id=2110916783]
+CanBeLighted = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer/EditGoomba" index="2" unique_id=897518121]
+visible = true
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1866165755]
 layout_mode = 2
 
@@ -939,45 +958,65 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaGreen/Button" parent_id_path=PackedInt32Array(2089743686, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("13_5xdc1")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaGreen" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_b4alm")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaGreen" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditTroopaRed" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2" unique_id=766727802 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaRed/Button" parent_id_path=PackedInt32Array(766727802, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("15_14e7h")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaRed" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_mx5sd")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaRed" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditTroopaBlue" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2" unique_id=1702236787 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaBlue/Button" parent_id_path=PackedInt32Array(1702236787, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("17_ivjbd")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaBlue" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_x65ne")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaBlue" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditTroopaYellow" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2" unique_id=-294967229 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaYellow/Button" parent_id_path=PackedInt32Array(-294967229, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_241")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaYellow" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_48")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditTroopaYellow" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditBuzzyBeetle" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2" unique_id=-294967230 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditBuzzyBeetle/Button" parent_id_path=PackedInt32Array(-294967230, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_240")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditBuzzyBeetle" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_47")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer2/EditBuzzyBeetle" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1795120336]
 layout_mode = 2
@@ -987,18 +1026,26 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3/EditTroopaFlyGreen/Button" parent_id_path=PackedInt32Array(821945690, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("17_i1k03")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3/EditTroopaFlyGreen" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_f8jqr")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3/EditTroopaFlyGreen" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditTroopaFlyRed" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3" unique_id=391221412 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3/EditTroopaFlyRed/Button" parent_id_path=PackedInt32Array(391221412, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("19_ivjbd")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3/EditTroopaFlyRed" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_vo80q")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer3/EditTroopaFlyRed" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1693398632]
 layout_mode = 2
@@ -1008,45 +1055,65 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticGreen/Button" parent_id_path=PackedInt32Array(-294967233, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_237")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticGreen" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_ldpyd")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticGreen" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellStaticRed" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4" unique_id=-294967232 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticRed/Button" parent_id_path=PackedInt32Array(-294967232, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_238")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticRed" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_rr3f8")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticRed" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellStaticBlue" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4" unique_id=-294967234 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticBlue/Button" parent_id_path=PackedInt32Array(-294967234, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_236")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticBlue" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_op20h")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticBlue" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellStaticYellow" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4" unique_id=-294967231 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticYellow/Button" parent_id_path=PackedInt32Array(-294967231, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_239")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticYellow" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_4k1rq")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticYellow" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellStaticBeetle" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4" unique_id=-294967235 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticBeetle/Button" parent_id_path=PackedInt32Array(-294967235, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_235")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticBeetle" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_d7fno")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer4/EditShellStaticBeetle" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer12" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1450946447]
 layout_mode = 2
@@ -1056,45 +1123,65 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingGreen/Button" parent_id_path=PackedInt32Array(-294967238, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_232")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingGreen" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_44")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingGreen" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellMovingRed" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12" unique_id=-294967237 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingRed/Button" parent_id_path=PackedInt32Array(-294967237, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_233")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingRed" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_45")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingRed" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellMovingBlue" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12" unique_id=-294967239 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingBlue/Button" parent_id_path=PackedInt32Array(-294967239, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_231")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingBlue" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_43")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingBlue" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellMovingYellow" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12" unique_id=-294967236 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingYellow/Button" parent_id_path=PackedInt32Array(-294967236, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_234")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingYellow" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_46")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingYellow" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditShellMovingBeetle" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12" unique_id=-294967240 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingBeetle/Button" parent_id_path=PackedInt32Array(-294967240, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_230")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingBeetle" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_42")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer12/EditShellMovingBeetle" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=582091203]
 layout_mode = 2
@@ -1104,38 +1191,54 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantGreen/Button" parent_id_path=PackedInt32Array(-294967252, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_218")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantGreen" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_30")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantGreen" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPiranhaPlantGreen2" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5" unique_id=1038998268 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantGreen2/Button" parent_id_path=PackedInt32Array(1038998268, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("45_xclfj")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantGreen2" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_30")
 flip_v = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantGreen2" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPiranhaPlantFire" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5" unique_id=-294967254 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantFire/Button" parent_id_path=PackedInt32Array(-294967254, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_216")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantFire" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_29")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantFire" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPiranhaPlantFireFlipV" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5" unique_id=-294967253 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantFireFlipV/Button" parent_id_path=PackedInt32Array(-294967253, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_217")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantFireFlipV" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_29")
 flip_v = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer5/EditPiranhaPlantFireFlipV" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer13" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=357031477]
 layout_mode = 2
@@ -1145,38 +1248,54 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantBlue/Button" parent_id_path=PackedInt32Array(-294967256, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_214")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantBlue" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_28")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantBlue" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPiranhaPlantBlueFlipV" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13" unique_id=-294967255 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantBlueFlipV/Button" parent_id_path=PackedInt32Array(-294967255, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_215")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantBlueFlipV" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_28")
 flip_v = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantBlueFlipV" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPiranhaPlantStone" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13" unique_id=-294967251 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantStone/Button" parent_id_path=PackedInt32Array(-294967251, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_219")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantStone" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_31")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantStone" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPiranhaPlantStoneFlipV" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13" unique_id=-294967250 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantStoneFlipV/Button" parent_id_path=PackedInt32Array(-294967250, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_220")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantStoneFlipV" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_31")
 flip_v = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer13/EditPiranhaPlantStoneFlipV" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer11" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=2105268230]
 layout_mode = 2
@@ -1186,36 +1305,52 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditLakitu/Button" parent_id_path=PackedInt32Array(-294967259, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_211")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditLakitu" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_25")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditLakitu" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditLakituStone" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11" unique_id=-294967258 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditLakituStone/Button" parent_id_path=PackedInt32Array(-294967258, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_212")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditLakituStone" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_26")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditLakituStone" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditSpiny" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11" unique_id=-294967243 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditSpiny/Button" parent_id_path=PackedInt32Array(-294967243, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_227")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditSpiny" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_39")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditSpiny" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditSpinyStone" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11" unique_id=-294967242 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditSpinyStone/Button" parent_id_path=PackedInt32Array(-294967242, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_228")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditSpinyStone" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_40")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer11/EditSpinyStone" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1012301841]
 layout_mode = 2
@@ -1225,36 +1360,52 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikePiranha/Button" parent_id_path=PackedInt32Array(-294967244, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_226")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikePiranha" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_38")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikePiranha" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditSpikeMw" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6" unique_id=-294967245 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikeMw/Button" parent_id_path=PackedInt32Array(-294967245, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_225")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikeMw" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_37")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikeMw" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditSpikeMf" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6" unique_id=-294967246 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikeMf/Button" parent_id_path=PackedInt32Array(-294967246, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_224")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikeMf" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_36")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditSpikeMf" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditRotoDiscStill" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6" unique_id=-294967248 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditRotoDiscStill/Button" parent_id_path=PackedInt32Array(-294967248, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_222")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditRotoDiscStill" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_33")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer6/EditRotoDiscStill" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=707657450]
 layout_mode = 2
@@ -1264,38 +1415,54 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditBulletBillCannon/Button" parent_id_path=PackedInt32Array(-294967268, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_202")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditBulletBillCannon" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_16")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditBulletBillCannon" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditBulletBillCannonFlipV" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7" unique_id=1414397143 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditBulletBillCannonFlipV/Button" parent_id_path=PackedInt32Array(1414397143, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("72_00t1q")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditBulletBillCannonFlipV" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_16")
 flip_v = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditBulletBillCannonFlipV" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditMissileBillCannon" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7" unique_id=-294967267 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditMissileBillCannon/Button" parent_id_path=PackedInt32Array(-294967267, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_203")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditMissileBillCannon" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_17")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditMissileBillCannon" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditMissileBillCannonFlipV" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7" unique_id=154817823 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditMissileBillCannonFlipV/Button" parent_id_path=PackedInt32Array(154817823, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("75_xclfj")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditMissileBillCannonFlipV" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_17")
 flip_v = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer7/EditMissileBillCannonFlipV" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer8" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=130937922]
 layout_mode = 2
@@ -1305,84 +1472,120 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepBlue/Button" parent_id_path=PackedInt32Array(-294967266, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_204")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepBlue" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_18")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepBlue" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditCheepCheepGreen" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8" unique_id=-294967265 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepGreen/Button" parent_id_path=PackedInt32Array(-294967265, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_205")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepGreen" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_19")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepGreen" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditCheepCheepRed" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8" unique_id=-294967264 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepRed/Button" parent_id_path=PackedInt32Array(-294967264, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_206")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepRed" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_20")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepRed" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditCheepCheepSpike" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8" unique_id=-294967263 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepSpike/Button" parent_id_path=PackedInt32Array(-294967263, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_207")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepSpike" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_21")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepSpike" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditCoralElectric" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8" unique_id=-294967247 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCoralElectric/Button" parent_id_path=PackedInt32Array(-294967247, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_223")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCoralElectric" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_35")
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCoralElectric" index="2" unique_id=897518121]
+visible = true
+
 [node name="HBoxContainer9" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1045049308]
 layout_mode = 2
-
-[node name="EditFireballBro" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9" unique_id=-294967262 instance=ExtResource("12_pe1k0")]
-layout_mode = 2
-
-[node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro/Button" parent_id_path=PackedInt32Array(-294967262, 603000286) index="0" unique_id=2110916783]
-PaintObjectScene = ExtResource("new_ext_208")
-
-[node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro" index="1" unique_id=977284360]
-texture = SubResource("AtlasTexture_new_22")
 
 [node name="EditHammerBro" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9" unique_id=-294967261 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditHammerBro/Button" parent_id_path=PackedInt32Array(-294967261, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_209")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditHammerBro" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_23")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditHammerBro" index="2" unique_id=897518121]
+visible = true
+
+[node name="EditFireballBro" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9" unique_id=-294967262 instance=ExtResource("12_pe1k0")]
+layout_mode = 2
+
+[node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro/Button" parent_id_path=PackedInt32Array(-294967262, 603000286) index="0" unique_id=2110916783]
+PaintObjectScene = ExtResource("new_ext_208")
+CanBeLighted = true
+
+[node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro" index="1" unique_id=977284360]
+texture = SubResource("AtlasTexture_new_22")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditBoo" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9" unique_id=-294967269 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditBoo/Button" parent_id_path=PackedInt32Array(-294967269, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_201")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditBoo" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_15")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditBoo" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPoisonousMushroom" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9" unique_id=-294967272 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditPoisonousMushroom/Button" parent_id_path=PackedInt32Array(-294967272, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_198")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditPoisonousMushroom" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_12")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditPoisonousMushroom" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer10" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies" unique_id=1170987841]
 layout_mode = 2
@@ -1392,38 +1595,54 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditLavaPiece/Button" parent_id_path=PackedInt32Array(-294967257, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_213")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditLavaPiece" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_27")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditLavaPiece" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditPodoboo" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10" unique_id=-294967249 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditPodoboo/Button" parent_id_path=PackedInt32Array(-294967249, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_221")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditPodoboo" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_32")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditPodoboo" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditThwomp" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10" unique_id=-294967241 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditThwomp/Button" parent_id_path=PackedInt32Array(-294967241, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_229")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditThwomp" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_41")
 stretch_mode = 5
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditThwomp" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditKoopa" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10" unique_id=-294967260 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditKoopa/Button" parent_id_path=PackedInt32Array(-294967260, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_210")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditKoopa" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_24")
 stretch_mode = 5
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditKoopa" index="2" unique_id=897518121]
+visible = true
 
 [node name="PanelDragScenery" type="Panel" parent="EditCanvasLayer/Control" unique_id=978404571]
 visible = false
@@ -1527,28 +1746,40 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditNightTree/Button" parent_id_path=PackedInt32Array(-294967187, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_283")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditNightTree" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_t3731")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditNightTree" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditBigNightTree" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2" unique_id=-294967214 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditBigNightTree/Button" parent_id_path=PackedInt32Array(-294967214, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_256")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditBigNightTree" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_78")
 stretch_mode = 5
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditBigNightTree" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditBrightLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2" unique_id=-294967210 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditBrightLight/Button" parent_id_path=PackedInt32Array(-294967210, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_260")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditBrightLight" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_wmiuk")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2/EditBrightLight" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditDisabledLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer2" unique_id=-294967197 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
@@ -1694,9 +1925,13 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer5/EditRotoDiscCore/Button" parent_id_path=PackedInt32Array(-294967184, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_286")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer5/EditRotoDiscCore" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_34")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer5/EditRotoDiscCore" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery" unique_id=216723139]
 layout_mode = 2
@@ -1829,19 +2064,27 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8/EditPortrait/Button" parent_id_path=PackedInt32Array(-294967186, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_284")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8/EditPortrait" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_ro2mq")
 stretch_mode = 5
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8/EditPortrait" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditLavaFall" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8" unique_id=-294967190 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8/EditLavaFall/Button" parent_id_path=PackedInt32Array(-294967190, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_280")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8/EditLavaFall" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_eybko")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery/HBoxContainer8/EditLavaFall" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer9" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragScenery/UiMarginContainer/Scenery" unique_id=2046084286]
 layout_mode = 2
@@ -1916,9 +2159,13 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer/EditPlayer/Button" parent_id_path=PackedInt32Array(-294967219, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_251")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer/EditPlayer" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_57")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer/EditPlayer" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditCheckpoint" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer" unique_id=-294967228 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
@@ -2007,10 +2254,14 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer3/EditPlatformFallRedLong/Button" parent_id_path=PackedInt32Array(-294967220, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_250")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer3/EditPlatformFallRedLong" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_54")
 stretch_mode = 5
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer3/EditPlatformFallRedLong" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks" unique_id=735969608]
 layout_mode = 2
@@ -2020,18 +2271,26 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4/EditIceBlock/Button" parent_id_path=PackedInt32Array(-294967294, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_176")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4/EditIceBlock" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_4")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4/EditIceBlock" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditMessageBlock" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4" unique_id=-294967293 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4/EditMessageBlock/Button" parent_id_path=PackedInt32Array(-294967293, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_177")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4/EditMessageBlock" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_5")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragMarks/UiMarginContainer/Marks/HBoxContainer4/EditMessageBlock" index="2" unique_id=897518121]
+visible = true
 
 [node name="PanelDragBonus" type="Panel" parent="EditCanvasLayer/Control" unique_id=1481781907]
 visible = false
@@ -2076,63 +2335,91 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditMushroom/Button" parent_id_path=PackedInt32Array(-294967274, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_196")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditMushroom" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_10")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditMushroom" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditFireFlower" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer" unique_id=-294967276 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditFireFlower/Button" parent_id_path=PackedInt32Array(-294967276, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_194")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditFireFlower" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_8")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditFireFlower" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditBeetroot" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer" unique_id=-294967278 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditBeetroot/Button" parent_id_path=PackedInt32Array(-294967278, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_192")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditBeetroot" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_6")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditBeetroot" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditLui" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer" unique_id=-294967275 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditLui/Button" parent_id_path=PackedInt32Array(-294967275, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_195")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditLui" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_9")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditLui" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditSuperLeaf" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer" unique_id=-294967271 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditSuperLeaf/Button" parent_id_path=PackedInt32Array(-294967271, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_199")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditSuperLeaf" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_13")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditSuperLeaf" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditSuperStar" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer" unique_id=-294967270 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditSuperStar/Button" parent_id_path=PackedInt32Array(-294967270, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_200")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditSuperStar" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_14")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditSuperStar" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditMushroomLife" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer" unique_id=-294967273 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditMushroomLife/Button" parent_id_path=PackedInt32Array(-294967273, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_197")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditMushroomLife" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_11")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer/EditMushroomLife" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus" unique_id=733754762]
 layout_mode = 2
@@ -2142,6 +2429,7 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockPoisonousMushroom/Button" parent_id_path=PackedInt32Array(-294967284, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_186")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockPoisonousMushroom" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2167,11 +2455,15 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockPoisonousMushroom" index="2" unique_id=897518121]
+visible = true
+
 [node name="EditQuestionBlockFireFlower" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2" unique_id=-294967290 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockFireFlower/Button" parent_id_path=PackedInt32Array(-294967290, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_180")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockFireFlower" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2197,11 +2489,15 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockFireFlower" index="2" unique_id=897518121]
+visible = true
+
 [node name="EditQuestionBlockBeetrootHidden" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2" unique_id=2084469978 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockBeetrootHidden/Button" parent_id_path=PackedInt32Array(2084469978, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("197_vg0yh")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockBeetrootHidden" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2227,11 +2523,15 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockBeetrootHidden" index="2" unique_id=897518121]
+visible = true
+
 [node name="EditQuestionBlockLui" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2" unique_id=-294967288 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockLui/Button" parent_id_path=PackedInt32Array(-294967288, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_182")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockLui" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2257,11 +2557,15 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockLui" index="2" unique_id=897518121]
+visible = true
+
 [node name="EditQuestionBlockSuperLeaf" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2" unique_id=-294967282 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockSuperLeaf/Button" parent_id_path=PackedInt32Array(-294967282, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_188")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockSuperLeaf" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2287,11 +2591,15 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockSuperLeaf" index="2" unique_id=897518121]
+visible = true
+
 [node name="EditQuestionBlockSuperStar" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2" unique_id=-294967280 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockSuperStar/Button" parent_id_path=PackedInt32Array(-294967280, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_190")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockSuperStar" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2317,11 +2625,15 @@ expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
 
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockSuperStar" index="2" unique_id=897518121]
+visible = true
+
 [node name="EditQuestionBlockMushroomLife" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2" unique_id=-294967286 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockMushroomLife/Button" parent_id_path=PackedInt32Array(-294967286, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_184")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockMushroomLife" index="1" unique_id=977284360]
 texture = ExtResource("new_ext_102")
@@ -2346,6 +2658,9 @@ texture = SubResource("AtlasTexture_new_11")
 expand_mode = 2
 stretch_mode = 5
 metadata/_edit_lock_ = true
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer2/EditQuestionBlockMushroomLife" index="2" unique_id=897518121]
+visible = true
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus" unique_id=1164511957]
 layout_mode = 2
@@ -2575,8 +2890,22 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlock/Button" parent_id_path=PackedInt32Array(-294967292, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_178")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlock" index="1" unique_id=977284360]
+texture = SubResource("AtlasTexture_new_3")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlock" index="2" unique_id=897518121]
+visible = true
+
+[node name="EditQuestionBlockHidden" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4" unique_id=235795556 instance=ExtResource("12_pe1k0")]
+layout_mode = 2
+
+[node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlockHidden/Button" parent_id_path=PackedInt32Array(235795556, 603000286) index="0" unique_id=2110916783]
+PaintObjectScene = ExtResource("227_xoyyh")
+
+[node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlockHidden" index="1" unique_id=977284360]
+modulate = Color(1, 1, 1, 0.28235295)
 texture = SubResource("AtlasTexture_new_3")
 
 [node name="EditBrick" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4" unique_id=-294967296 instance=ExtResource("12_pe1k0")]
@@ -2584,17 +2913,35 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditBrick/Button" parent_id_path=PackedInt32Array(-294967296, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_174")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditBrick" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_1")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditBrick" index="2" unique_id=897518121]
+visible = true
 
 [node name="EditCoinBrick" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4" unique_id=-294967295 instance=ExtResource("12_pe1k0")]
 layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrick/Button" parent_id_path=PackedInt32Array(-294967295, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_175")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrick" index="1" unique_id=977284360]
+texture = SubResource("AtlasTexture_new_2")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrick" index="2" unique_id=897518121]
+visible = true
+
+[node name="EditCoinBrickHidden" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4" unique_id=1230515565 instance=ExtResource("12_pe1k0")]
+layout_mode = 2
+
+[node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrickHidden/Button" parent_id_path=PackedInt32Array(1230515565, 603000286) index="0" unique_id=2110916783]
+PaintObjectScene = ExtResource("232_vpa0e")
+
+[node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrickHidden" index="1" unique_id=977284360]
+modulate = Color(1, 1, 1, 0.28235295)
 texture = SubResource("AtlasTexture_new_2")
 
 [node name="EditCoin" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4" unique_id=-294967277 instance=ExtResource("12_pe1k0")]
@@ -2602,9 +2949,13 @@ layout_mode = 2
 
 [node name="PaintObjectSet" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoin/Button" parent_id_path=PackedInt32Array(-294967277, 603000286) index="0" unique_id=2110916783]
 PaintObjectScene = ExtResource("new_ext_193")
+CanBeLighted = true
 
 [node name="TextureRect" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoin" index="1" unique_id=977284360]
 texture = SubResource("AtlasTexture_new_7")
+
+[node name="TextureRectLight" parent="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoin" index="2" unique_id=897518121]
+visible = true
 
 [node name="PanelDragPrefs" type="Panel" parent="EditCanvasLayer/Control" unique_id=893445696]
 visible = false
@@ -2634,9 +2985,111 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="EditObjectCategoryLabel" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer" unique_id=770893665 instance=ExtResource("23_j5ylf")]
+[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer" unique_id=1335749949]
+layout_mode = 2
+
+[node name="EditObjectCategoryLabel" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer" unique_id=770893665 instance=ExtResource("23_j5ylf")]
 layout_mode = 2
 text = "Prefs"
+
+[node name="LevelName" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer" unique_id=326521778]
+layout_mode = 2
+
+[node name="LevelNameLabel" type="Label" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/LevelName" unique_id=612472947]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("232_u5y02")
+text = "LEVEL NAME:"
+uppercase = true
+
+[node name="LevelNameButton" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/LevelName" unique_id=251217845 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "LEVEL_TITLE"
+
+[node name="LevelAuthor" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer" unique_id=396939308]
+layout_mode = 2
+
+[node name="LevelAuthorLabel" type="Label" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/LevelAuthor" unique_id=115400996]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("232_u5y02")
+text = "LEVEL AUTHOR:"
+uppercase = true
+
+[node name="LevelAuthorButton" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/LevelAuthor" unique_id=1022277172 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "LEVEL_TITLE"
+
+[node name="LevelGravity" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer" unique_id=1597495382]
+layout_mode = 2
+
+[node name="GravityLabel" type="Label" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/LevelGravity" unique_id=620534065]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("232_u5y02")
+text = "GRAVITY:"
+uppercase = true
+
+[node name="GravityButton" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/LevelGravity" unique_id=1977220005 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "GRAVITY_VALUE"
+
+[node name="KoopaEnergy" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer" unique_id=52754463]
+layout_mode = 2
+
+[node name="KoopaEnergyLabel" type="Label" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/KoopaEnergy" unique_id=878388946]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("232_u5y02")
+text = "KOOPA ENERGY:"
+uppercase = true
+
+[node name="KoopaEnergyButton" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/KoopaEnergy" unique_id=1140579222 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "KOOPA_ENERGY"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer" unique_id=1968788045]
+layout_mode = 2
+
+[node name="SaveAndLoad" type="VBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5" unique_id=1388044523]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="SmwpButton" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad" unique_id=1987102076 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "SAVE"
+
+[node name="SmwpButton2" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad" unique_id=261004752 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "SAVE AS"
+
+[node name="SmwpButton3" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad" unique_id=1836021333 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "LOAD"
+
+[node name="SmwpButton4" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad" unique_id=651237433 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "QUIT"
+
+[node name="ExtraLevelSettings" type="VBoxContainer" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5" unique_id=1624293499]
+layout_mode = 2
+
+[node name="SmwpButton" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/ExtraLevelSettings" unique_id=1947999876 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "BACKGROUND SET"
+
+[node name="SmwpButton2" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/ExtraLevelSettings" unique_id=2009501003 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "MUSIC THEME"
+
+[node name="SmwpButton3" parent="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/ExtraLevelSettings" unique_id=1250287750 instance=ExtResource("5_cjcar")]
+layout_mode = 2
+text = "ADDITIONAL SETTINGS"
 
 [node name="UndoRedoControl" type="Control" parent="EditCanvasLayer/Control" unique_id=1518039503]
 layout_mode = 1
@@ -2740,39 +3193,6 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "-"
 
-[node name="UiMarginContainer" parent="EditCanvasLayer/Control" unique_id=128041065 instance=ExtResource("16_o43ii")]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -49.5
-offset_right = 0.0
-offset_bottom = 49.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="EditCanvasLayer/Control/UiMarginContainer" unique_id=1388044523]
-layout_mode = 2
-
-[node name="SmwpButton" parent="EditCanvasLayer/Control/UiMarginContainer/VBoxContainer" unique_id=1987102076 instance=ExtResource("5_cjcar")]
-layout_mode = 2
-text = "SAVE"
-
-[node name="SmwpButton2" parent="EditCanvasLayer/Control/UiMarginContainer/VBoxContainer" unique_id=261004752 instance=ExtResource("5_cjcar")]
-layout_mode = 2
-text = "SAVE AS"
-
-[node name="SmwpButton3" parent="EditCanvasLayer/Control/UiMarginContainer/VBoxContainer" unique_id=1836021333 instance=ExtResource("5_cjcar")]
-layout_mode = 2
-text = "LOAD"
-
 [node name="BackToTitle" parent="EditCanvasLayer/Control" unique_id=1788790513 instance=ExtResource("16_o43ii")]
 layout_mode = 1
 anchors_preset = 1
@@ -2823,8 +3243,9 @@ DialogMode = 2
 [connection signal="pressed" from="EditCanvasLayer/Control/PanelDragDeck/UiMarginContainer/VBoxContainer/MarksButton" to="EditCanvasLayer/Control/PanelDragMarks/ControlVisibility" method="ToggleVisibility"]
 [connection signal="pressed" from="EditCanvasLayer/Control/PanelDragDeck/UiMarginContainer/VBoxContainer/BonusButton" to="EditCanvasLayer/Control/PanelDragBonus/ControlVisibility" method="ToggleVisibility"]
 [connection signal="pressed" from="EditCanvasLayer/Control/PanelDragDeck/UiMarginContainer/VBoxContainer/PrefsButton" to="EditCanvasLayer/Control/PanelDragPrefs/ControlVisibility" method="ToggleVisibility"]
-[connection signal="pressed" from="EditCanvasLayer/Control/UiMarginContainer/VBoxContainer/SmwpButton2" to="SaveFile" method="show"]
-[connection signal="pressed" from="EditCanvasLayer/Control/UiMarginContainer/VBoxContainer/SmwpButton3" to="LoadFile" method="show"]
+[connection signal="pressed" from="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad/SmwpButton2" to="SaveFile" method="show"]
+[connection signal="pressed" from="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad/SmwpButton3" to="LoadFile" method="show"]
+[connection signal="pressed" from="EditCanvasLayer/Control/PanelDragPrefs/UiMarginContainer/VBoxContainer/HBoxContainer5/SaveAndLoad/SmwpButton4" to="SaveFile" method="show"]
 [connection signal="pressed" from="EditCanvasLayer/Control/BackToTitle/BackToTitleButton" to="EditCanvasLayer/Control/BackToTitle/BackToTitleButton" method="JumpToScene" flags=3 binds= [&"uid://2h2s1iqemydd"]]
 
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer/EditGoomba"]
@@ -2870,8 +3291,8 @@ DialogMode = 2
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepRed"]
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCheepCheepSpike"]
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer8/EditCoralElectric"]
-[editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro"]
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditHammerBro"]
+[editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditFireballBro"]
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditBoo"]
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer9/EditPoisonousMushroom"]
 [editable path="EditCanvasLayer/Control/PanelDragBuddies/UiMarginContainer/Buddies/HBoxContainer10/EditLavaPiece"]
@@ -2953,6 +3374,8 @@ DialogMode = 2
 [editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer3/EditQuestionBlockSuperStarHidden"]
 [editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer3/EditQuestionBlockMushroomLifeHidden"]
 [editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlock"]
+[editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditQuestionBlockHidden"]
 [editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditBrick"]
 [editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrick"]
+[editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoinBrickHidden"]
 [editable path="EditCanvasLayer/Control/PanelDragBonus/UiMarginContainer/Bonus/HBoxContainer4/EditCoin"]

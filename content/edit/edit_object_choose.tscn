@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c0r7y46iaodoj" path="res://script/edit/PaintObjectButtonSet.cs" id="1_luab2"]
 [ext_resource type="PackedScene" uid="uid://d3tuxhxlbamt0" path="res://content/edit/spawner/enemy/goomba/edit_goomba.tscn" id="2_nn4g5"]
 [ext_resource type="Texture2D" uid="uid://c30tfd1s6hvdn" path="res://content/level/enemy/goomba/goomba.png" id="3_yb7hw"]
+[ext_resource type="Texture2D" uid="uid://dm0ru1b73hcrh" path="res://content/edit/edit_light.png" id="4_nn4g5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3sodo"]
 atlas = ExtResource("3_yb7hw")
@@ -23,10 +24,10 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="PaintObjectSet" type="Node" parent="Button" unique_id=2110916783]
+[node name="PaintObjectSet" type="Node" parent="Button" unique_id=2110916783 node_paths=PackedStringArray("LightNode")]
 script = ExtResource("1_luab2")
-PaintMode = 1
 PaintObjectScene = ExtResource("2_nn4g5")
+LightNode = NodePath("../../TextureRectLight")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=977284360]
 clip_contents = true
@@ -41,3 +42,19 @@ texture = SubResource("AtlasTexture_3sodo")
 expand_mode = 2
 stretch_mode = 3
 metadata/_edit_lock_ = true
+
+[node name="TextureRectLight" type="TextureRect" parent="." unique_id=897518121]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -12.0
+offset_top = 4.0
+offset_right = -2.0
+offset_bottom = 14.0
+grow_horizontal = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset_ratio = Vector2(1, 0)
+texture = ExtResource("4_nn4g5")
+stretch_mode = 2
