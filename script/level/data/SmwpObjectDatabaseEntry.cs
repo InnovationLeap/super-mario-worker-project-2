@@ -28,4 +28,6 @@ public partial class SmwpObjectDatabaseEntry : Resource {
     /// 该物件额外数据（例如探照灯的数据）的处理器。
     /// </summary>
     [Export] public ObjectProcessor? MetadataProcessor { get; set; }
+    
+    [Export] public PackedScene? EditObject { get; set; }
 }

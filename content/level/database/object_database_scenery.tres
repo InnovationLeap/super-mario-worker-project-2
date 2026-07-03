@@ -43,11 +43,53 @@
 [ext_resource type="PackedScene" uid="uid://coydtpdr4yyk0" path="res://content/level/scenery/scene/medium_coral.tscn" id="41_20s60"]
 [ext_resource type="PackedScene" uid="uid://c04d48foqiwwp" path="res://content/level/scenery/scene/dark_coral.tscn" id="42_apwe0"]
 [ext_resource type="Script" uid="uid://bjb4gqto4sgu3" path="res://script/level/data/SmwpObjectDatabase.cs" id="42_c502y"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_cloud.tscn" id="e_cloud"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_bush.tscn" id="e_bush"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_small_tree.tscn" id="e_small_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_big_tree.tscn" id="e_big_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_fence.tscn" id="e_fence"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_night_tree.tscn" id="e_night_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dark_cloud.tscn" id="e_dark_cloud"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dark_bush.tscn" id="e_dark_bush"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dark_tree.tscn" id="e_dark_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_big_dark_tree.tscn" id="e_big_dark_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dark_fence.tscn" id="e_dark_fence"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_big_night_tree.tscn" id="e_big_night_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dusk_cloud.tscn" id="e_dusk_cloud"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_bright_light.tscn" id="e_bright_light"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_disabled_light.tscn" id="e_disabled_light"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_fort.tscn" id="e_fort"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_castle.tscn" id="e_castle"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_portrait.tscn" id="e_portrait"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_cannon_base.tscn" id="e_cannon_base"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_base_bottom.tscn" id="e_base_bottom"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_reverse_base.tscn" id="e_reverse_base"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dusk_bush.tscn" id="e_dusk_bush"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dusk_tree.tscn" id="e_dusk_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_big_dusk_tree.tscn" id="e_big_dusk_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_snow_bush.tscn" id="e_snow_bush"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_snow_tree.tscn" id="e_snow_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_big_snow_tree.tscn" id="e_big_snow_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_snow_fence.tscn" id="e_snow_fence"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_snow_fort.tscn" id="e_snow_fort"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_snow_castle.tscn" id="e_snow_castle"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_desert_bush.tscn" id="e_desert_bush"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_desert_tree.tscn" id="e_desert_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_big_desert_tree.tscn" id="e_big_desert_tree"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_desert_cloud.tscn" id="e_desert_cloud"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_lava_fall.tscn" id="e_lava_fall"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_bridge_fence.tscn" id="e_bridge_fence"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_grey_cloud.tscn" id="e_grey_cloud"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_roto-disc_core.tscn" id="e_roto-disc_core"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_light_coral.tscn" id="e_light_coral"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_medium_coral.tscn" id="e_medium_coral"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/scenery/edit_dark_coral.tscn" id="e_dark_coral"]
 
 [sub_resource type="Resource" id="Resource_hknmb"]
 script = ExtResource("2_4qocu")
 Id = 101
 Prefab = ExtResource("1_qq4ym")
+EditObject = ExtResource("e_cloud")
 SpawnOffset = Vector2(16, 8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -55,6 +97,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 102
 Prefab = ExtResource("3_fskld")
+EditObject = ExtResource("e_bush")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -62,6 +105,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 103
 Prefab = ExtResource("4_fskld")
+EditObject = ExtResource("e_small_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -69,6 +113,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 104
 Prefab = ExtResource("5_dy1eh")
+EditObject = ExtResource("e_big_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -76,6 +121,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 105
 Prefab = ExtResource("6_uxyua")
+EditObject = ExtResource("e_fence")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -83,6 +129,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 106
 Prefab = ExtResource("7_uxyua")
+EditObject = ExtResource("e_night_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -90,6 +137,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 107
 Prefab = ExtResource("8_irntw")
+EditObject = ExtResource("e_dark_cloud")
 SpawnOffset = Vector2(16, 8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -97,6 +145,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 108
 Prefab = ExtResource("9_qnit1")
+EditObject = ExtResource("e_dark_bush")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -104,6 +153,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 109
 Prefab = ExtResource("10_7hpmc")
+EditObject = ExtResource("e_dark_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -111,6 +161,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 110
 Prefab = ExtResource("11_mdjbm")
+EditObject = ExtResource("e_big_dark_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -118,6 +169,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 111
 Prefab = ExtResource("12_tg7um")
+EditObject = ExtResource("e_dark_fence")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -125,6 +177,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 112
 Prefab = ExtResource("13_atg5a")
+EditObject = ExtResource("e_big_night_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -132,6 +185,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 113
 Prefab = ExtResource("14_t7kyr")
+EditObject = ExtResource("e_dusk_cloud")
 SpawnOffset = Vector2(16, 8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -139,6 +193,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 114
 Prefab = ExtResource("15_hjs5b")
+EditObject = ExtResource("e_bright_light")
 SpawnOffset = Vector2(16, -32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -146,6 +201,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 115
 Prefab = ExtResource("16_b7dou")
+EditObject = ExtResource("e_disabled_light")
 SpawnOffset = Vector2(16, -8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -153,6 +209,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 116
 Prefab = ExtResource("17_50t6m")
+EditObject = ExtResource("e_fort")
 SpawnOffset = Vector2(16, 64)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -160,6 +217,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 117
 Prefab = ExtResource("18_2i1t6")
+EditObject = ExtResource("e_castle")
 SpawnOffset = Vector2(16, 160)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -167,6 +225,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 118
 Prefab = ExtResource("19_atg5a")
+EditObject = ExtResource("e_portrait")
 SpawnOffset = Vector2(64, 80)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -174,24 +233,28 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 119
 Prefab = ExtResource("20_t7kyr")
+EditObject = ExtResource("e_cannon_base")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_g0hh5"]
 script = ExtResource("2_4qocu")
 Id = 120
 Prefab = ExtResource("21_hjs5b")
+EditObject = ExtResource("e_base_bottom")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_v8lp2"]
 script = ExtResource("2_4qocu")
 Id = 121
 Prefab = ExtResource("22_t7kyr")
+EditObject = ExtResource("e_reverse_base")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_xajxs"]
 script = ExtResource("2_4qocu")
 Id = 122
 Prefab = ExtResource("23_hjs5b")
+EditObject = ExtResource("e_dusk_bush")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -199,6 +262,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 123
 Prefab = ExtResource("24_a08cv")
+EditObject = ExtResource("e_dusk_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -206,6 +270,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 124
 Prefab = ExtResource("25_vw0ed")
+EditObject = ExtResource("e_big_dusk_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -213,6 +278,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 125
 Prefab = ExtResource("26_poak2")
+EditObject = ExtResource("e_snow_bush")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -220,6 +286,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 126
 Prefab = ExtResource("27_p7vw5")
+EditObject = ExtResource("e_snow_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -227,6 +294,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 127
 Prefab = ExtResource("28_8gejq")
+EditObject = ExtResource("e_big_snow_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -234,6 +302,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 128
 Prefab = ExtResource("29_hkqgr")
+EditObject = ExtResource("e_snow_fence")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -241,6 +310,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 129
 Prefab = ExtResource("30_xajxs")
+EditObject = ExtResource("e_snow_fort")
 SpawnOffset = Vector2(16, 64)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -248,6 +318,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 130
 Prefab = ExtResource("31_xcm8h")
+EditObject = ExtResource("e_snow_castle")
 SpawnOffset = Vector2(16, 160)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -255,6 +326,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 131
 Prefab = ExtResource("32_7xqwo")
+EditObject = ExtResource("e_desert_bush")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -262,6 +334,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 132
 Prefab = ExtResource("33_4qocu")
+EditObject = ExtResource("e_desert_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -269,6 +342,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 133
 Prefab = ExtResource("34_20s60")
+EditObject = ExtResource("e_big_desert_tree")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -276,6 +350,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 134
 Prefab = ExtResource("35_apwe0")
+EditObject = ExtResource("e_desert_cloud")
 SpawnOffset = Vector2(16, 8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -283,12 +358,14 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 135
 Prefab = ExtResource("36_b4jpr")
+EditObject = ExtResource("e_lava_fall")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_nxcqw"]
 script = ExtResource("2_4qocu")
 Id = 136
 Prefab = ExtResource("37_p1obm")
+EditObject = ExtResource("e_bridge_fence")
 SpawnOffset = Vector2(16, 32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -296,6 +373,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 137
 Prefab = ExtResource("38_hbp2r")
+EditObject = ExtResource("e_grey_cloud")
 SpawnOffset = Vector2(16, 8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -303,12 +381,14 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 138
 Prefab = ExtResource("39_e2wek")
+EditObject = ExtResource("e_roto-disc_core")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_mrg8r"]
 script = ExtResource("2_4qocu")
 Id = 139
 Prefab = ExtResource("40_4qocu")
+EditObject = ExtResource("e_light_coral")
 SpawnOffset = Vector2(16, -48)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -316,6 +396,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 140
 Prefab = ExtResource("41_20s60")
+EditObject = ExtResource("e_medium_coral")
 SpawnOffset = Vector2(16, -48)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -323,6 +404,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_4qocu")
 Id = 141
 Prefab = ExtResource("42_apwe0")
+EditObject = ExtResource("e_dark_coral")
 SpawnOffset = Vector2(16, -48)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 

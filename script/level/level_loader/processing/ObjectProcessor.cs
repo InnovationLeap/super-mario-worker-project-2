@@ -26,6 +26,8 @@ public abstract partial class ObjectProcessor : Resource {
     public virtual bool IsCreatedInstancePositioned() => false;
     
     public virtual void ProcessObject(Node node, ClassicSmwlObject instance) {}
+    
+    public virtual void ProcessSpawner(SpawnerObject spawner) {}
 
     protected static bool MetadataLengthIsInvalid(string processorName, string metadata, int expected) {
         if (metadata.Length == expected) {

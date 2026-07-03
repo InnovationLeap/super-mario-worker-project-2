@@ -19,47 +19,78 @@
 [ext_resource type="PackedScene" uid="uid://b7p4i1t28bwi1" path="res://content/level/bonus/coin/coin.tscn" id="12_siis4"]
 [ext_resource type="PackedScene" uid="uid://c1kwue0ln0x4k" path="res://content/level/block/question_block/question_block_mushroom_life.tscn" id="13_qckut"]
 [ext_resource type="PackedScene" uid="uid://cgegxokohdrj6" path="res://content/level/block/question_block/question_block_poisonous_mushroom.tscn" id="14_mvdxt"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_fire_flower.tscn" id="e_qb_fire_flower"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_beetroot.tscn" id="e_qb_beetroot"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_lui.tscn" id="e_qb_lui"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_super_star.tscn" id="e_qb_super_star"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_mushroom_life.tscn" id="e_qb_mushroom_life"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_poisonous_mushroom.tscn" id="e_qb_poisonous"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_fire_flower_hidden.tscn" id="e_qb_fire_flower_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_beetroot_hidden.tscn" id="e_qb_beetroot_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_lui_hidden.tscn" id="e_qb_lui_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_super_star_hidden.tscn" id="e_qb_super_star_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_mushroom_life_hidden.tscn" id="e_qb_mushroom_life_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_poisonous_mushroom_hidden.tscn" id="e_qb_poisonous_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block.tscn" id="e_qb_empty"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/question_block/edit_question_block_hidden.tscn" id="e_qb_empty_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/brick/edit_brick.tscn" id="e_brick"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/coin_brick/edit_coin_brick.tscn" id="e_coin_brick"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/block/coin_brick/edit_coin_brick_hidden.tscn" id="e_coin_brick_h"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_coin.tscn" id="e_coin"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_mushroom.tscn" id="e_mushroom"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_fire_flower.tscn" id="e_fire_flower"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_beetroot.tscn" id="e_beetroot"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_lui.tscn" id="e_lui"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_super_star.tscn" id="e_super_star"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_mushroom_life.tscn" id="e_mushroom_life"]
 
 [sub_resource type="Resource" id="Resource_eu6c3"]
 script = ExtResource("2_gepcd")
 Id = 301
 Prefab = ExtResource("8_gepcd")
+EditObject = ExtResource("e_qb_fire_flower")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_siis4"]
 script = ExtResource("2_gepcd")
 Id = 302
 Prefab = ExtResource("10_1haat")
+EditObject = ExtResource("e_qb_beetroot")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_1wcjh"]
 script = ExtResource("2_gepcd")
 Id = 303
 Prefab = ExtResource("11_q6arj")
+EditObject = ExtResource("e_qb_lui")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_libak"]
 script = ExtResource("2_gepcd")
 Id = 304
 Prefab = ExtResource("12_c3388")
+EditObject = ExtResource("e_qb_super_star")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_venni"]
 script = ExtResource("2_gepcd")
 Id = 305
 Prefab = ExtResource("13_qckut")
+EditObject = ExtResource("e_qb_mushroom_life")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_kr7fv"]
 script = ExtResource("2_gepcd")
 Id = 306
 Prefab = ExtResource("14_mvdxt")
+EditObject = ExtResource("e_qb_poisonous")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_q6arj"]
 script = ExtResource("2_gepcd")
 Id = 307
 Prefab = ExtResource("8_gepcd")
+EditObject = ExtResource("e_qb_fire_flower_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -67,6 +98,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 308
 Prefab = ExtResource("10_1haat")
+EditObject = ExtResource("e_qb_beetroot_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -74,6 +106,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 309
 Prefab = ExtResource("11_q6arj")
+EditObject = ExtResource("e_qb_lui_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -81,6 +114,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 310
 Prefab = ExtResource("12_c3388")
+EditObject = ExtResource("e_qb_super_star_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -88,6 +122,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 311
 Prefab = ExtResource("13_qckut")
+EditObject = ExtResource("e_qb_mushroom_life_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -95,6 +130,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 312
 Prefab = ExtResource("14_mvdxt")
+EditObject = ExtResource("e_qb_poisonous_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -102,12 +138,14 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 313
 Prefab = ExtResource("9_42xqj")
+EditObject = ExtResource("e_qb_empty")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_pxndp"]
 script = ExtResource("2_gepcd")
 Id = 314
 Prefab = ExtResource("9_42xqj")
+EditObject = ExtResource("e_qb_empty_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -115,18 +153,21 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 315
 Prefab = ExtResource("10_yi3wa")
+EditObject = ExtResource("e_brick")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_5fk1g"]
 script = ExtResource("2_gepcd")
 Id = 316
 Prefab = ExtResource("11_eu6c3")
+EditObject = ExtResource("e_coin_brick")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_ykfrg"]
 script = ExtResource("2_gepcd")
 Id = 317
 Prefab = ExtResource("11_eu6c3")
+EditObject = ExtResource("e_coin_brick_h")
 MetadataProcessor = ExtResource("8_kg4e1")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -134,42 +175,49 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_gepcd")
 Id = 318
 Prefab = ExtResource("12_siis4")
+EditObject = ExtResource("e_coin")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_nlnrb"]
 script = ExtResource("2_gepcd")
 Id = 319
 Prefab = ExtResource("9_mvdxt")
+EditObject = ExtResource("e_mushroom")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_qkvyb"]
 script = ExtResource("2_gepcd")
 Id = 320
 Prefab = ExtResource("1_ue33m")
+EditObject = ExtResource("e_fire_flower")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_f3eul"]
 script = ExtResource("2_gepcd")
 Id = 321
 Prefab = ExtResource("3_qkvyb")
+EditObject = ExtResource("e_beetroot")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_4q0lw"]
 script = ExtResource("2_gepcd")
 Id = 322
 Prefab = ExtResource("4_u3347")
+EditObject = ExtResource("e_lui")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_gepcd"]
 script = ExtResource("2_gepcd")
 Id = 323
 Prefab = ExtResource("5_2k1td")
+EditObject = ExtResource("e_super_star")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_kg4e1"]
 script = ExtResource("2_gepcd")
 Id = 324
 Prefab = ExtResource("6_2k1td")
+EditObject = ExtResource("e_mushroom_life")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [resource]

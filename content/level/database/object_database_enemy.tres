@@ -51,11 +51,39 @@
 [ext_resource type="Resource" uid="uid://c3fxeldmii0bb" path="res://content/level/database/processors/flying_cheep_cheep_area_metadata_processor.tres" id="40_dbiyf"]
 [ext_resource type="PackedScene" uid="uid://v7rsq0tg4vjv" path="res://content/level/enemy/lakitu/lakitu_stone.tscn" id="41_ive3h"]
 [ext_resource type="Resource" uid="uid://omxnwwgdwdyq" path="res://content/level/database/processors/troopa_shell_metadata_processor.tres" id="43_poooy"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/goomba/edit_goomba.tscn" id="e_goomba"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_walking/edit_troopa_green.tscn" id="e_troopa_green"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_walking/edit_troopa_red.tscn" id="e_troopa_red"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_fly/edit_troopa_fly_green.tscn" id="e_troopa_fly_green"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/spiny/edit_spiny.tscn" id="e_spiny"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/bullet_bill/edit_bullet_bill_cannon.tscn" id="e_bullet_bill_cannon"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/cheep-cheep/edit_cheep-cheep_red.tscn" id="e_cheep_red"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/cheep-cheep/edit_cheep-cheep_green.tscn" id="e_cheep_green"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/cheep-cheep/edit_cheep-cheep_blue.tscn" id="e_cheep_blue"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/cheep-cheep/edit_cheep-cheep_spike.tscn" id="e_cheep_spike"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/bonus/edit_poisonous_mushroom.tscn" id="e_poisonous"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/spike/edit_spike_piranha_hr.tscn" id="e_spike_piranha"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/lava/edit_lava_piece.tscn" id="e_lava_piece"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/hammer_bro/edit_hammer_bro.tscn" id="e_hammer_bro"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/podoboo/edit_podoboo.tscn" id="e_podoboo"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/koopa/edit_koopa.tscn" id="e_koopa"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/spiny/edit_spiny_stone.tscn" id="e_spiny_stone"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/bullet_bill/edit_missile_bill_cannon.tscn" id="e_missile_bill"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/hammer_bro/edit_fireball_bro.tscn" id="e_fireball_bro"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/lava/edit_lava_bottom.tscn" id="e_lava_bottom"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/boo/edit_boo.tscn" id="e_boo"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_walking/edit_buzzy_beetle.tscn" id="e_buzzy_beetle"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_fly/edit_troopa_fly_red.tscn" id="e_troopa_fly_red"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_walking/edit_troopa_blue.tscn" id="e_troopa_blue"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/troopa/troopa_walking/edit_troopa_yellow.tscn" id="e_troopa_yellow"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/roto-disc/edit_roto-disc_still.tscn" id="e_roto_disc_still"]
+[ext_resource type="PackedScene" path="res://content/edit/spawner/enemy/lakitu/edit_lakitu_stone.tscn" id="e_lakitu_stone"]
 
 [sub_resource type="Resource" id="Resource_g1apy"]
 script = ExtResource("2_v7upk")
 Id = 1
 Prefab = ExtResource("1_bmvpb")
+EditObject = ExtResource("e_goomba")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -63,6 +91,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 2
 Prefab = ExtResource("3_toyxu")
+EditObject = ExtResource("e_troopa_green")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -70,6 +99,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 3
 Prefab = ExtResource("4_7q31g")
+EditObject = ExtResource("e_troopa_red")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -77,6 +107,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 4
 Prefab = ExtResource("5_llua3")
+EditObject = ExtResource("e_troopa_fly_green")
 SpawnOffset = Vector2(0, -4)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -84,6 +115,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 5
 Prefab = ExtResource("6_adiqc")
+EditObject = ExtResource("e_spiny")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -128,12 +160,14 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 11
 Prefab = ExtResource("11_xrdg5")
+EditObject = ExtResource("e_bullet_bill_cannon")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_2h1bp"]
 script = ExtResource("2_v7upk")
 Id = 12
 Prefab = ExtResource("12_mc8ga")
+EditObject = ExtResource("e_cheep_red")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -141,6 +175,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 13
 Prefab = ExtResource("13_rbdqh")
+EditObject = ExtResource("e_cheep_green")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -148,6 +183,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 14
 Prefab = ExtResource("14_r7sda")
+EditObject = ExtResource("e_cheep_blue")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -155,6 +191,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 15
 Prefab = ExtResource("15_8lacj")
+EditObject = ExtResource("e_cheep_spike")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -162,12 +199,14 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 16
 Prefab = ExtResource("16_3ww0w")
+EditObject = ExtResource("e_poisonous")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_s51am"]
 script = ExtResource("2_v7upk")
 Id = 17
 Prefab = ExtResource("16_pavau")
+EditObject = ExtResource("e_spike_piranha")
 MetadataProcessor = ExtResource("16_bop37")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -175,12 +214,14 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 18
 Prefab = ExtResource("17_ive3h")
+EditObject = ExtResource("e_lava_piece")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_py65r"]
 script = ExtResource("2_v7upk")
 Id = 19
 Prefab = ExtResource("18_pavau")
+EditObject = ExtResource("e_hammer_bro")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_5kfe5"]
@@ -194,6 +235,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 21
 Prefab = ExtResource("21_bwect")
+EditObject = ExtResource("e_podoboo")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -215,6 +257,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 24
 Prefab = ExtResource("24_bop37")
+EditObject = ExtResource("e_koopa")
 SpawnOffset = Vector2(0, -32)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -222,6 +265,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 25
 Prefab = ExtResource("25_j0ib6")
+EditObject = ExtResource("e_spiny_stone")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -229,24 +273,28 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 26
 Prefab = ExtResource("26_v7upk")
+EditObject = ExtResource("e_missile_bill")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_v7upk"]
 script = ExtResource("2_v7upk")
 Id = 27
 Prefab = ExtResource("27_toyxu")
+EditObject = ExtResource("e_fireball_bro")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_toyxu"]
 script = ExtResource("2_v7upk")
 Id = 28
 Prefab = ExtResource("28_7q31g")
+EditObject = ExtResource("e_lava_bottom")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_7q31g"]
 script = ExtResource("2_v7upk")
 Id = 29
 Prefab = ExtResource("11_xrdg5")
+EditObject = ExtResource("e_boo")
 MetadataProcessor = ExtResource("30_j0ib6")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -254,6 +302,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 30
 Prefab = ExtResource("26_v7upk")
+EditObject = ExtResource("e_buzzy_beetle")
 MetadataProcessor = ExtResource("30_j0ib6")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -261,6 +310,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 31
 Prefab = ExtResource("29_llua3")
+EditObject = ExtResource("e_troopa_fly_red")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -268,6 +318,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 32
 Prefab = ExtResource("30_adiqc")
+EditObject = ExtResource("e_troopa_blue")
 SpawnOffset = Vector2(0, 0)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -297,6 +348,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 36
 Prefab = ExtResource("34_6pmrl")
+EditObject = ExtResource("e_troopa_yellow")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_mc8ga"]
@@ -317,6 +369,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 39
 Prefab = ExtResource("38_poooy")
+EditObject = ExtResource("e_roto_disc_still")
 MetadataProcessor = ExtResource("38_ehybk")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
@@ -338,6 +391,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 42
 Prefab = ExtResource("38_r7sda")
+EditObject = ExtResource("e_lakitu_stone")
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
 [sub_resource type="Resource" id="Resource_pavau"]
@@ -380,6 +434,7 @@ metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 script = ExtResource("2_v7upk")
 Id = 48
 Prefab = ExtResource("41_ive3h")
+EditObject = ExtResource("e_lakitu_stone")
 SpawnOffset = Vector2(0, 8)
 metadata/_custom_type_script = "uid://cpxsb6lorrux4"
 
